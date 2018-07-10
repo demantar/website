@@ -18,12 +18,12 @@ async function main() {
   console.log("loading finneshed")
 
   console.log(canvas);
-  data = canvas.getImageData(0, 0, 28, 28);
-      pdata = [];
-      for (let i = 0; i < data.length; i += 4) {
-        pdata = 255 - data[i]
-      }
-      console.log(pdata);
+  data = await canvas.getImageData(0, 0, 28, 28);
+  pdata = [];
+  for (let i = 0; i < data.length; i += 4) {
+    pdata = 255 - data[i]
+  }
+  console.log(pdata);
 
   console.log(model.execute({input: pdata,
   keep_probability: 1}));
