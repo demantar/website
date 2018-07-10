@@ -22,7 +22,7 @@ async function main() {
   console.log(canvas);
   data = canvas.getImageData(0, 0, 28, 28);
   pdata = [];
-  console.log(data.length);
+  console.log(data);
   for (let i = 0; i < data.length; i += 4) {
     pdata[i / 4] = 255 - data[i]
     console.log(pdata[i/4]);
