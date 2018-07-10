@@ -29,8 +29,7 @@ async function main() {
   }
   console.log(pdata);
 
-  console.log(model.execute({input: pdata,
-  keep_probability: 1}));
+  console.log(model.execute({input: pdata}));
 }
 
 function setup() {
