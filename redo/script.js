@@ -18,7 +18,7 @@ async function main() {
 
 function setup() {
   canvas = createCanvas(28, 28);
-  canvas = canvas.getContext("2d")
+  canvas = canvas.elt.getContext("2d");
   background(0);
 }
 
