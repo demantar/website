@@ -2,6 +2,7 @@
 let model;
 let canvas;
 let data;
+let pdata;
 
 async function main() {
   let ROOT_URL = location.href;
@@ -22,11 +23,11 @@ async function main() {
   data = await canvas.getImageData(0, 0, 28, 28);
   pdata = [];
   for (let i = 0; i < data.length; i += 4) {
-    pdata = 255 - data[i]
+    pdata[0] = 255 - data[i]
   }
   console.log(pdata);
 
-  console.log(model.execute({input: pdata,
+  console.log(model.execute({input: pdata, wanted_output: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   keep_probability: 1}));
 }
 
