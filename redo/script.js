@@ -1,6 +1,7 @@
 
 let model;
 let canvas;
+let data;
 
 async function main() {
   let ROOT_URL = location.href;
