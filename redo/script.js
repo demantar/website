@@ -20,7 +20,7 @@ async function main() {
   console.log("loading finneshed")
 
   console.log(canvas);
-  data = await canvas.getImageData(0, 0, 28, 28);
+  data = canvas.getImageData(0, 0, 28, 28);
   pdata = [];
   console.log(data.length);
   for (let i = 0; i < data.length; i += 4) {
