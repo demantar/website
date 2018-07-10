@@ -20,7 +20,7 @@ function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
   background(255);
-  framerate(1);
+  frameRate(1);
 }
 
 main();
