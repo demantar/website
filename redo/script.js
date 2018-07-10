@@ -16,6 +16,16 @@ async function main() {
   console.log("loading");
   model = await tf.loadFrozenModel(MODEL_URL, WEIGHTS_URL);
   console.log("loading finneshed")
+
+  data = canvas.getIgamgeData(0, 0, 28, 28);
+      pdata = [];
+      for (let i = 0; i < data.length; i += 4) {
+        pdata = 255 - data[i]
+      }
+      console.log(pdata);
+
+  console.log(model.execute({input: pdata,
+  keep_probability: 1}));
 }
 
 function setup() {
@@ -26,6 +36,10 @@ function setup() {
 }
 
 main();
+
+function mousePressed() {
+  point(mouseX, mouseY);
+}
 
 // function draw() {
 //   console.log("running");
