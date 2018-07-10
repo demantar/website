@@ -25,6 +25,7 @@ function setup() {
 main();
 
 function draw() {
+  console.log("running");
   if (model != null) {
     data = canvas.getIgamgeData(0, 0, 28, 28);
     pdata = [];
