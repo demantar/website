@@ -27,19 +27,19 @@ function setup() {
 
 main();
 
-function draw() {
-  console.log("running");
-  console.log(model);
-  if (model != null) {
-    data = canvas.getIgamgeData(0, 0, 28, 28);
-    pdata = [];
-    for (let i = 0; i < data.length; i += 4) {
-      pdata = 255 - data[i]
-    }
-    console.log(pdata);
-  }
-
-  if (mouseIsPressed) {
-    point(mouseX, mouseY);
-  }
-}
+// function draw() {
+//   console.log("running");
+//   console.log(model);
+//   if (model != null) {
+//     data = canvas.getIgamgeData(0, 0, 28, 28);
+//     pdata = [];
+//     for (let i = 0; i < data.length; i += 4) {
+//       pdata = 255 - data[i]
+//     }
+//     console.log(pdata);
+//   }
+//
+//   if (mouseIsPressed) {
+//     point(mouseX, mouseY);
+//   }
+// }
