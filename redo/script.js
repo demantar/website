@@ -21,15 +21,15 @@ async function main() {
 
   console.log(canvas);
   data = canvas.getImageData(0, 0, 28, 28).data;
-  pdata = [];
+  pdata = [[]];
   console.log(data);
   for (let i = 0; i < data.length; i += 4) {
-    pdata[i / 4] = 255 - data[i]
+    pdata[0][i / 4] = 255 - data[i]
     console.log(pdata[i/4]);
   }
   console.log(pdata);
-  console.log(model.execute({input: [pdata],
-  keep_probability: [1]}));
+  console.log(model.execute({input: pdata,
+  keep_probability: 1}));
 }
 
 function setup() {
