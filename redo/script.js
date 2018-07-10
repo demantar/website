@@ -24,6 +24,7 @@ async function main() {
   pdata = [];
   for (let i = 0; i < data.length; i += 4) {
     pdata[i / 4] = 255 - data[i]
+    console.log(pdata[i/4]);
   }
   console.log(pdata);
 
