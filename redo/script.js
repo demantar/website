@@ -18,7 +18,7 @@ async function main() {
   console.log("loading finneshed")
 
   console.log(canvas);
-  data = canvas.getIgamgeData(0, 0, 28, 28);
+  data = canvas.getImageData(0, 0, 28, 28);
       pdata = [];
       for (let i = 0; i < data.length; i += 4) {
         pdata = 255 - data[i]
