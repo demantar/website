@@ -13,7 +13,9 @@ async function main() {
   console.log(MODEL_URL);
   console.log(WEIGHTS_URL);
 
+  console.log("loading");
   model = await tf.loadFrozenModel(MODEL_URL, WEIGHTS_URL);
+  console.log("loading finneshed")
 }
 
 function setup() {
