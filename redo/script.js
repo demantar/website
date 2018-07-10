@@ -19,13 +19,14 @@ async function main() {
 function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
-  background(0);
+  background(255);
 }
 
 main();
 
 function draw() {
   console.log("running");
+  console.log(model);
   if (model != null) {
     data = canvas.getIgamgeData(0, 0, 28, 28);
     pdata = [];
