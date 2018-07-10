@@ -17,7 +17,8 @@ async function main() {
 }
 
 function setup() {
-  canvas = createCanvas(28, 28).getContext("2d");
+  canvas = createCanvas(28, 28);
+  canvas = canvas.getContext("2d")
   background(0);
 }
 
