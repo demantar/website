@@ -28,8 +28,7 @@ async function main() {
     console.log(pdata[i/4]);
   }
   console.log(pdata);
-
-  console.log(model.execute({input: pdata,
+  console.log(model.execute({input: [pdata],
   keep_probability: [1]}));
 }
 
