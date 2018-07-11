@@ -47,6 +47,7 @@ function setup() {
   background(0);
   button = createButton('predict');
   button.mousePressed(logPrediction);
+  stroke(255);
 }
 
 main();
