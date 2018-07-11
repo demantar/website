@@ -28,7 +28,9 @@ async function main() {
 async function getPrediction() {
   data = canvas.getImageData(0, 0, 28, 28).data;
   pdata = [];
+  console.log(data);
   for (let i = 0; i < data.length; i += 4) {
+    console.log(data[i]);
     pdata[i / 4] = data[i] / 255
   }
   console.log(pdata);
