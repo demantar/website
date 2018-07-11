@@ -31,6 +31,7 @@ async function getPrediction() {
   for (let i = 0; i < data.length; i += 4) {
     pdata[i / 4] = data[i]
   }
+  console.log(pdata);
   return model.execute({
     input: tf.tensor(pdata, [1, 784]),
     keep_probability: tf.tensor(1)
