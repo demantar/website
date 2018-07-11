@@ -28,8 +28,8 @@ async function main() {
     console.log(pdata[i/4]);
   }
   console.log(pdata);
-  console.log(model.execute({input: pdata,
-  keep_probability: 1}));
+  console.log(model.execute({input: tf.tensor(pdata),
+  keep_probability: tf.tensor(1)}));
 }
 
 function setup() {
