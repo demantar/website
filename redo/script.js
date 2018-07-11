@@ -3,6 +3,7 @@ let model;
 let canvas;
 let data;
 let pdata;
+let button;
 
 async function main() {
   let ROOT_URL = location.href;
@@ -17,26 +18,35 @@ async function main() {
 
   console.log("loading");
   model = await tf.loadFrozenModel(MODEL_URL, WEIGHTS_URL);
-  console.log("loading finneshed")
+  console.log("loading finneshed");
 
-  console.log(canvas);
+  getPrediction();
+}
+
+async function getPrediction() {
   data = canvas.getImageData(0, 0, 28, 28).data;
-  pdata = [[]];
-  console.log(data);
+  pdata = [];
   for (let i = 0; i < data.length; i += 4) {
-    pdata[0][i / 4] = 255 - data[i]
-    console.log(pdata[i/4]);
+    pdata[i / 4] = data[i]
   }
-  console.log(pdata);
-  console.log(model.execute({input: tf.tensor(pdata),
-  keep_probability: tf.tensor(1)}));
+  return model.execute({
+    input: tf.tensor(pdata, [1, 784]),
+    keep_probability: tf.tensor(1)
+  });
+}
+
+async function logPrediction() {
+  let pred = await getPrediction();
+  let predData = await pred.data();
+  console.log(predData);
 }
 
 function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
-  background(255);
-  frameRate(1);
+  background(0);
+  button = createButton('predict');
+  button.mousePressed(logPrediction);
 }
 
 main();
@@ -44,20 +54,3 @@ main();
 function mousePressed() {
   point(mouseX, mouseY);
 }
-
-// function draw() {
-//   console.log("running");
-//   console.log(model);
-//   if (model != null) {
-//     data = canvas.getIgamgeData(0, 0, 28, 28);
-//     pdata = [];
-//     for (let i = 0; i < data.length; i += 4) {
-//       pdata = 255 - data[i]
-//     }
-//     console.log(pdata);
-//   }
-//
-//   if (mouseIsPressed) {
-//     point(mouseX, mouseY);
-//   }
-// }
