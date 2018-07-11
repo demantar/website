@@ -52,10 +52,10 @@ function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
   background(0);
-  clear();
+  // clear();
   stroke(255);
-  clearbutton = createButton('clear');
-  clearbutton.mousePressed(clear);
+  // clearbutton = createButton('clear');
+  // clearbutton.mousePressed(clear);
 }
 
 function mousePressed() {
