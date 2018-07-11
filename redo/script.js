@@ -3,7 +3,8 @@ let model;
 let canvas;
 let data;
 let pdata;
-let button;
+let predbutton;
+let clearbutton;
 
 async function main() {
   let ROOT_URL = location.href;
@@ -20,8 +21,8 @@ async function main() {
   model = await tf.loadFrozenModel(MODEL_URL, WEIGHTS_URL);
   console.log("loading finneshed");
 
-  button = createButton('predict');
-  button.mousePressed(logPrediction);
+  predbutton = createButton('predict');
+  predbutton.mousePressed(logPrediction);
 }
 
 async function getPrediction() {
@@ -43,15 +44,21 @@ async function logPrediction() {
   console.log(predData);
 }
 
+function clear() {
+  background(0);
+}
+
 function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
-  background(0);
+  clear();
   stroke(255);
+  clearbutton = createButton('clear');
+  clearbutton.mousePressed(clear);
 }
-
-main();
 
 function mousePressed() {
   point(mouseX, mouseY);
 }
+
+main();
