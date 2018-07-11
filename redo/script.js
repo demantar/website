@@ -20,7 +20,8 @@ async function main() {
   model = await tf.loadFrozenModel(MODEL_URL, WEIGHTS_URL);
   console.log("loading finneshed");
 
-  getPrediction();
+  button = createButton('predict');
+  button.mousePressed(logPrediction);
 }
 
 async function getPrediction() {
@@ -37,6 +38,7 @@ async function getPrediction() {
 
 async function logPrediction() {
   let pred = await getPrediction();
+  pred = tf.softmax(pred);
   let predData = await pred.data();
   console.log(predData);
 }
@@ -45,8 +47,6 @@ function setup() {
   canvas = createCanvas(28, 28);
   canvas = canvas.elt.getContext("2d");
   background(0);
-  button = createButton('predict');
-  button.mousePressed(logPrediction);
   stroke(255);
 }
 
