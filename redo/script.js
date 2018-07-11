@@ -29,7 +29,7 @@ async function getPrediction() {
   data = canvas.getImageData(0, 0, 28, 28).data;
   pdata = [];
   for (let i = 0; i < data.length; i += 4) {
-    pdata[i / 4] = data[i]
+    pdata[i / 4] = data[i] / 255
   }
   console.log(pdata);
   return model.execute({
