@@ -81,12 +81,14 @@ var s = function (sk) {
     sk.createCanvas(28, 28);
     sk.background(0);
     sk.stroke(255);
-
-    printPixels(sk);
   }
 
   sk.mouseDragged = function() {
     sk.line(sk.mouseX, sk.mouseY, sk.pmouseX, sk.pmouseY);
+  }
+
+  sk.mouseReleased = function() {
+    printPixels(sk);
   }
 }
 
