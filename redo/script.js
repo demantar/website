@@ -60,10 +60,9 @@ function setup() {
   stroke(255);
   // clearbutton = createButton('clear');
   // clearbutton.mousePressed(clear);
+  main();
 }
 
 function mouseDragged() {
   point(mouseX, mouseY);
 }
-
-main();
