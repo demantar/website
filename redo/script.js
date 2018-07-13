@@ -61,7 +61,7 @@ function setup() {
   // clearbutton.mousePressed(clear);
 }
 
-function mousePressed() {
+function mouseDragged() {
   point(mouseX, mouseY);
 }
 
