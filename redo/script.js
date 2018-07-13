@@ -79,7 +79,7 @@ var s = function (sk) {
   }
 
   sk.mouseDragged = function() {
-    sk.line(mouseX, mouseY, pmouseX, pmouseY);
+    sk.line(sk.mouseX, sk.mouseY, sk.pmouseX, sk.pmouseY);
   }
 }
 
