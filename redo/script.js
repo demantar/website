@@ -29,7 +29,7 @@ async function getPrediction() {
   loadPixels();
   pdata = [];
   console.log(pixels);
-  for (let i = 0; i < data.length; i += 4) {
+  for (let i = 0; i < pixels.length; i += 4) {
     console.log(data[i]);
     pdata[i / 4] = pixels[i] / 255
   }
