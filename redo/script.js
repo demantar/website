@@ -68,14 +68,21 @@
 
 
 
-
+async function printPixels(sk) {
+  sk.loadPixels();
+  console.log("pixels");
+  console.log(sk.pixels);
+  sk.updatePixels();
+}
 
 
 var s = function (sk) {
   sk.setup = function() {
     sk.createCanvas(28, 28);
     sk.background(0);
-    sk.stroke(255)
+    sk.stroke(255);
+
+    printPixels(sk);
   }
 
   sk.mouseDragged = function() {
