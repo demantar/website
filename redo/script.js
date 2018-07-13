@@ -122,6 +122,7 @@ var s = function (sk) {
     sk.createCanvas(28, 28);
     sk.background(0);
     sk.stroke(255);
+    main();
   }
 
   sk.mouseDragged = function() {
