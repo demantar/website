@@ -33,7 +33,7 @@ async function main(sk) {
 
 async function logPrediction(sk) {
   let pred = await getPrediction(sk);
-  pred = tf.softmax(pred);
+  //pred = tf.softmax(pred);
   let predData = await pred.data();
   console.log(predData);
 }
@@ -41,8 +41,6 @@ async function logPrediction(sk) {
 async function getPrediction(sk) {
   sk.loadPixels();
   pdata = [];
-  console.log("pixels:");
-  console.log(sk.pixels);
   for (let x = 0; x < sk.width; x++) {
     for (let y = 0; y < sk.height; y++) {
       let i = x + y * sk.width * 4;
@@ -51,7 +49,7 @@ async function getPrediction(sk) {
     }
   }
   sk.updatePixels();
-  console.log(pdata);
+  //console.log(pdata);
   return model.execute({
     input: tf.tensor(pdata, [1, 784]),
     keep_probability: tf.tensor(1)
@@ -72,7 +70,7 @@ var s = function (sk) {
   }
 
   sk.mouseReleased = function() {
-    printPixels(sk);
+    //printPixels(sk);
   }
 }
 
