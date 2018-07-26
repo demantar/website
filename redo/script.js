@@ -1,10 +1,8 @@
 
 let model;
-let canvas;
 let data;
 let pdata;
 let predbutton;
-let clearbutton;
 
 async function printPixels(sk) {
   sk.loadPixels();
@@ -65,6 +63,7 @@ var s = function (sk) {
     sk.createCanvas(28, 28);
     sk.background(0);
     sk.stroke(255);
+    sk.pixelDensity(1);
     main(sk);
   }
 
