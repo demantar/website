@@ -49,7 +49,7 @@ async function getPrediction(sk) {
     }
   }
   sk.updatePixels();
-  //console.log(pdata);
+  console.log(typeof pdata);
   return model.execute({
     input: tf.tensor(pdata, [1, 784]),
     keep_probability: tf.tensor(1)
