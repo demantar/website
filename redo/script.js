@@ -61,9 +61,9 @@ async function getPrediction(sk) {
 var s = function (sk) {
   sk.setup = function() {
     sk.createCanvas(28, 28);
+    sk.pixelDensity(1);
     sk.background(0);
     sk.stroke(255);
-    sk.pixelDensity(1);
     main(sk);
   }
 
