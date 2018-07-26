@@ -106,9 +106,12 @@ async function getPrediction(sk) {
   pdata = [];
   console.log("pixels:");
   console.log(sk.pixels);
-  for (let i = 0; i < sk.pixels.length; i += 4) {
-    console.log(sk.pixels[i]);
-    pdata[i / 4] = sk.pixels[i] / 255
+  for (let x = 0; x < sk.width; x++) {
+    for (let y = 0; y < sk.height; y++) {
+      let i = x + y * sk.width * 4;
+      console.log(sk.pixels[i]);
+      pdata.push(sk.pixels[i] / 255);
+    }
   }
   console.log(pdata);
   return model.execute({
