@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(28, 28);
+  createCanvas(400, 400);
   loadPixels();
   console.log("pixels: " + pixels);
   console.log("length: " + pixels.length);
